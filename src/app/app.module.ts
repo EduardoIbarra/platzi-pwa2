@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatExpansionModule, MatFormFieldModule, MatInputModule,
+  MatExpansionModule, MatFormFieldModule, MatInputModule, MatListModule, MatOptionModule, MatSelectModule,
   MatToolbarModule
 } from '@angular/material';
 import {AngularFireModule} from 'angularfire2';
@@ -44,7 +44,10 @@ const firebase: any = {
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    MatOptionModule,
+    MatSelectModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
