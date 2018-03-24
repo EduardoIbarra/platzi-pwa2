@@ -40,58 +40,13 @@
     <button mat-raised-button color="accent" (click)="saveNote()">Guardar Nota</button>
   </mat-expansion-panel>
   <mat-list>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
+    <mat-list-item *ngFor="let note of notes">
+      <h3 matLine> {{note.title}} </h3>
       <p matLine>
-        <span> Cuerpo Nota </span>
+        <span> {{note.content}} </span>
       </p>
       <p matLine>
-        <small> Trabajo </small>
-      </p>
-    </mat-list-item>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
-      <p matLine>
-        <span> Cuerpo Nota </span>
-      </p>
-      <p matLine>
-        <small> Trabajo </small>
-      </p>
-    </mat-list-item>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
-      <p matLine>
-        <span> Cuerpo Nota </span>
-      </p>
-      <p matLine>
-        <small> Trabajo </small>
-      </p>
-    </mat-list-item>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
-      <p matLine>
-        <span> Cuerpo Nota </span>
-      </p>
-      <p matLine>
-        <small> Trabajo </small>
-      </p>
-    </mat-list-item>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
-      <p matLine>
-        <span> Cuerpo Nota </span>
-      </p>
-      <p matLine>
-        <small> Trabajo </small>
-      </p>
-    </mat-list-item>
-    <mat-list-item>
-      <h3 matLine> Título Nota </h3>
-      <p matLine>
-        <span> Cuerpo Nota </span>
-      </p>
-      <p matLine>
-        <small> Trabajo </small>
+        <small> {{note.category}} - {{note.id | date}} </small>
       </p>
     </mat-list-item>
   </mat-list>
