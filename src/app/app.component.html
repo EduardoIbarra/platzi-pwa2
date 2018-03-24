@@ -40,7 +40,7 @@
     <button mat-raised-button color="accent" (click)="saveNote()">Guardar Nota</button>
   </mat-expansion-panel>
   <mat-list>
-    <mat-list-item *ngFor="let note of notes">
+    <mat-list-item *ngFor="let note of notes" (click)="selectNote(note)">
       <h3 matLine> {{note.title}} </h3>
       <p matLine>
         <span> {{note.content}} </span>
