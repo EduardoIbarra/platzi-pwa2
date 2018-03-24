@@ -23,5 +23,17 @@
         "/assets/**"
       ]
     }
+  }],
+  "dataGroups": [{
+    "name": "redditAPI",
+    "urls": [
+      "https://www.reddit.com/r/pics.json"
+    ],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxAge": "1d",
+      "maxSize": 100
+    }
+
   }]
 }
