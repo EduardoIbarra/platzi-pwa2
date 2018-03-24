@@ -19,11 +19,11 @@
     </mat-expansion-panel-header>
 
     <mat-form-field>
-      <input matInput placeholder="Título">
+      <input matInput placeholder="Título" [(ngModel)]="note.title">
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Categoría">
+      <mat-select placeholder="Categoría" [(ngModel)]="note.category">
         <mat-option value="personal">
           Personal
         </mat-option>
@@ -34,8 +34,10 @@
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Textarea"></textarea>
+      <textarea matInput placeholder="Textarea" [(ngModel)]="note.content"></textarea>
     </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)="saveNote()">Guardar Nota</button>
   </mat-expansion-panel>
   <mat-list>
     <mat-list-item>
