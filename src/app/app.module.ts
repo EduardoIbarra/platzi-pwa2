@@ -12,6 +12,20 @@ import {
   MatExpansionModule, MatFormFieldModule, MatInputModule,
   MatToolbarModule
 } from '@angular/material';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireStorageModule} from 'angularfire2/storage';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
+const firebase: any = {
+  apiKey: 'AIzaSyB9Ctx1mjNjVxPDhVutBLL_yNXxcxq0AyE',
+  authDomain: 'angularnotes-febaa.firebaseapp.com',
+  databaseURL: 'https://angularnotes-febaa.firebaseio.com',
+  projectId: 'angularnotes-febaa',
+  storageBucket: 'angularnotes-febaa.appspot.com',
+  messagingSenderId: '736724691154'
+};
 
 @NgModule({
   declarations: [
@@ -25,7 +39,12 @@ import {
     MatToolbarModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AngularFireModule.initializeApp(firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
