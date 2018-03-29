@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {SwUpdate} from '@angular/service-worker';
 import {MatSnackBar} from "@angular/material";
 import {NotesService} from "../services/notes.service";
+import {MessagingService} from "../services/messaging.service";
+import {AuthService} from "../services/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,9 @@ export class AppComponent implements OnInit {
   title = 'app';
   note: any = {};
   notes: any = [];
-  constructor(private swUpdate: SwUpdate, public snackBar: MatSnackBar, public notesService: NotesService) {
+  message: any = null;
+  constructor(private swUpdate: SwUpdate, public snackBar: MatSnackBar, public notesService: NotesService, private msgService: MessagingService,
+              private authService: AuthService, private  pessagingService: MessagingService) {
     this.notesService.getNotes().valueChanges()
       .subscribe((response) => {
         console.log(response);
@@ -27,6 +31,9 @@ export class AppComponent implements OnInit {
         }
       });
     }
+    this.msgService.getPermission();
+    this.msgService.receiveMessage();
+    this.message = this.msgService.currentMessage;
   }
   saveNote(): void {
     if(!this.note.id) {
@@ -44,5 +51,8 @@ export class AppComponent implements OnInit {
   }
   selectNote(note): void {
     this.note = JSON.parse(JSON.stringify(note));
+  }
+  login(){
+    this.authService.loginWithFacebook();
   }
 }

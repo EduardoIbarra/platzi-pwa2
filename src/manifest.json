@@ -12,6 +12,7 @@
   "background_color": "transparent",
   "related_applications": [],
   "prefer_related_applications": false,
+  "gcm_sender_id": "103953800507",
   "icons": [
     {
       "src": "assets/icon-72x72.png",
